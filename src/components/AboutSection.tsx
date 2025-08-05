@@ -64,7 +64,7 @@ export default function AboutSection() {
         className="max-w-2xl text-2xl sm:text-3xl lg:text-3xl xl:max-w-3xl xl:text-4xl font-pprightgrotesk-wide"
       >
         <p className="block">
-          I'm a developer driven by a passion for building pixel-perfect and
+          I&apos;m a developer driven by a passion for building pixel-perfect and
           accessible interfaces that blend design and engineering. I thrive at
           the intersection of creativity and code—turning thoughtful design into
           performance driven and intuitive user experiences.
