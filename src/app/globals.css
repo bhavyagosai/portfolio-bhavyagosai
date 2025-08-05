@@ -8,8 +8,19 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --font-migra: var(--font-migra);
+
+  --font-ppfragment-glare: var(--font-ppfragment-glare);
+  --font-ppfragment-sans: var(--font-ppfragment-sans);
+  --font-ppfragment-serif: var(--font-ppfragment-serif);
+
+  --font-ppneuecorp-compact: var(--font-ppneuecorp-compact);
+  --font-ppneuecorp: var(--font-ppneuecorp);
+
+  --font-pprightgrotesk: var(--font-pprightgrotesk);
+  --font-pprightgrotesk-compact: var(--font-pprightgrotesk-compact);
+  --font-pprightgrotesk-wide: var(--font-pprightgrotesk-wide);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +33,51 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-pprightgrotesk-wide), sans-serif;
+}
+
+.no-scroll {
+  overflow: hidden !important;
+  height: 100vh !important;
+}
+
+.char-top,
+.char-bottom {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+.email-char {
+  padding-right: 0.2rem;
+}
+
+.headingLine {
+  padding-right: 0.2rem;
+}
+
+.underline-animation .underline-bar {
+  @apply absolute opacity-90 left-0 -bottom-[1px] h-[1.5px] w-full scale-x-0 origin-left transition-transform duration-500 ease-[cubic-bezier(0.65,0,0.35,1)];
+  background: linear-gradient(
+    to right,
+    #7a4ae3,
+    #3dc1a7,
+    #b7d7d5,
+    #f5e1be,
+    #e18c6b,
+    #d1678a
+  );
+}
+
+@media (min-width: 768px) {
+  .underline-animation:hover .underline-bar {
+    @apply origin-left scale-x-100;
+  }
+
+  .underline-animation:not(:hover) .underline-bar {
+    @apply origin-right scale-x-0;
+  }
+}
+
+.underline-animation.active .underline-bar {
+  @apply origin-left scale-x-100;
 }
