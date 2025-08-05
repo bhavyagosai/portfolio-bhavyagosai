@@ -26,4 +26,5 @@ const ArrowIcon = forwardRef<SVGSVGElement, Props>(({ svgProps }, ref) => {
   );
 });
 
+ArrowIcon.displayName = "ArrowIcon";
 export default ArrowIcon;

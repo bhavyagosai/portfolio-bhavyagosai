@@ -42,4 +42,5 @@ const LfiLogo = (props: SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
+LfiLogo.displayName = "LfiLogo";
 export default LfiLogo;

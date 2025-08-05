@@ -17,4 +17,6 @@ const OnlydustLogo = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
+
+OnlydustLogo.displayName = "OnlydustLogo";
 export default OnlydustLogo;

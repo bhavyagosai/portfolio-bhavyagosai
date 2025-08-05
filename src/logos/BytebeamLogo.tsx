@@ -23,4 +23,6 @@ const BytebeamLogo = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
+
+BytebeamLogo.displayName = "BytebeamLogo";
 export default BytebeamLogo;

@@ -36,4 +36,5 @@ const HamburgerIcon = forwardRef<SVGSVGElement, Props>(({ svgProps }, ref) => {
   );
 });
 
+HamburgerIcon.displayName = "HamburgerIcon";
 export default HamburgerIcon;
