@@ -333,11 +333,7 @@ export default function MobileHamburger(props: MobileHamburgerProps) {
                     e.preventDefault();
 
                     if (index === menuItems.length - 1) {
-                      window.open(
-                        "https://bhavyagosai.com/Bhavya_Gosai_Resume.pdf/",
-                        "_blank",
-                        "noopener,noreferrer"
-                      );
+                      window.open("/resume", "_blank", "noopener,noreferrer");
                     } else handleScrollTo(index);
                   }}
                 >

@@ -661,7 +661,7 @@ export default function LaptopMockup() {
       const intersects = raycaster.intersectObject(screenMesh, true);
 
       if (intersects.length > 0) {
-        openLinkInNewTab("https://bhavyagosai.com/Bhavya_Gosai_Resume.pdf/");
+        openLinkInNewTab("/resume");
       }
     };
 

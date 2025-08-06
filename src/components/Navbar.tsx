@@ -205,11 +205,7 @@ export default function Navbar() {
               onMouseLeave={handleMouseLeave}
             >
               <h1 className="font-pprightgrotesk-wide">
-                <a
-                  href="https://bhavyagosai.com/Bhavya_Gosai_Resume.pdf/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="/resume" target="_blank" rel="noopener noreferrer">
                   Resume
                 </a>
               </h1>
