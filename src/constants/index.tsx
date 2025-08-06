@@ -204,7 +204,7 @@ export const footerLinks = [
   {
     name: "Github",
     logo: <GithubLogo />,
-    logoSmall: <GithubLogo height={40} width={40} />,
+    logoSmall: <GithubLogo height={42} width={42} />,
     url: "https://github.com/bhavyagosai/",
   },
 ];
