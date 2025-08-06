@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { SplitText } from "gsap/SplitText";
 import { useLoader } from "@/context/LoaderContext";
+import { useAppRef } from "@/context/AppRefContext";
 import { useResponsiveBreakpoints } from "@/hooks/useResponsiveBreakpoints";
 import LoadingBall from "@/components/LoadingBall";
 import { cn } from "@/utils";
@@ -15,11 +16,12 @@ gsap.registerPlugin(SplitText);
 export default function SiteLoader() {
   const { loaded, setLoaded } = useLoader();
   const { isMobile } = useResponsiveBreakpoints();
+  const { appBackgroundRef } = useAppRef();
   const containerRef = useRef<HTMLDivElement>(null);
   const counterRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
 
-  const [loadingPercentage, setLoadingPercentage] = useState(0);
+  // const [loadingPercentage, setLoadingPercentage] = useState(0);
 
   const startLoader = () => {
     if (!counterRef.current) return;
@@ -30,13 +32,13 @@ export default function SiteLoader() {
         triggerWebsiteLoad();
         return;
       }
-      currentValue += Math.floor(Math.random() * 5) + 1;
+      currentValue += Math.floor(Math.random() * 9) + 1;
       if (currentValue > 100) {
         currentValue = 100;
       }
       if (counterRef.current) {
         counterRef.current.textContent = `${currentValue}`;
-        setLoadingPercentage(currentValue);
+        // setLoadingPercentage(currentValue);
       }
 
       let delay = Math.floor(Math.random() * 200) + 50;
@@ -54,6 +56,8 @@ export default function SiteLoader() {
   const triggerWebsiteLoad = contextSafe(() => {
     if (!containerRef.current || !textRef.current) return;
 
+    const blurProxy = { blur: 100 };
+
     document.fonts.ready.then(() => {
       setTimeout(() => {
         gsap.set(textRef.current, {
@@ -67,22 +71,34 @@ export default function SiteLoader() {
           mask: "lines",
           onSplit: (self) => {
             return gsap
-              .timeline()
-              .to(self.lines, {
-                yPercent: 100,
-                opacity: 0,
-                filter: "blur(20px)",
-                stagger: 0.2,
-                duration: 1,
-                ease: "power3.inOut",
-              })
-              .to(containerRef.current, {
-                yPercent: -100,
-                duration: 1.2,
-                delay: -0.3,
-                ease: "expo.inOut",
+              .timeline({
                 onComplete: () => setLoaded(true),
-              });
+              })
+              .to(
+                blurProxy,
+                {
+                  blur: isMobile ? 50 : 0,
+                  duration: 1,
+                  ease: "power3.out",
+                  onUpdate: () => {
+                    if (appBackgroundRef.current) {
+                      appBackgroundRef.current.style.backdropFilter = `blur(${blurProxy.blur}px)`;
+                    }
+                  },
+                },
+                0
+              )
+              .to(
+                self.lines,
+                {
+                  yPercent: 100,
+                  opacity: 0,
+                  filter: "blur(20px)",
+                  duration: 1,
+                  ease: "power3.inOut",
+                },
+                0
+              );
           },
         });
       }, 300);
@@ -98,7 +114,7 @@ export default function SiteLoader() {
         )}
         ref={containerRef}
       >
-        <LoadingBall loadValue={loadingPercentage} />
+        {/* <LoadingBall loadValue={loadingPercentage} /> */}
 
         <h1
           ref={textRef}

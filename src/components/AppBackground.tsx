@@ -78,7 +78,7 @@ export default function AppBackground() {
       />
       <div
         ref={appBackgroundRef}
-        className="fixed inset-0 top-0 w-screen h-screen overflow-hidden pointer-events-none -z-9 will-change-[backdrop-filter] backdrop-blur-[50px] md:backdrop-blur-[0px]"
+        className="fixed inset-0 top-0 w-screen h-screen overflow-hidden pointer-events-none -z-9 will-change-[backdrop-filter] backdrop-blur-[100px]"
       />
     </Fragment>
   );
