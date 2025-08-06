@@ -12,6 +12,7 @@ import { useLoader } from "@/context/LoaderContext";
 import { useAppRef } from "@/context/AppRefContext";
 import { useResponsiveBreakpoints } from "@/hooks/useResponsiveBreakpoints";
 import { useIsTouchScreen } from "@/hooks/useIsTouchScreen";
+import { laptopLinks } from "@/constants";
 import { cn } from "@/utils";
 
 gsap.registerPlugin(useGSAP);
@@ -27,6 +28,7 @@ export default function LaptopMockup() {
     marqueeContainerRef,
     projectsContainerRef,
     minorProjectsContainerRef,
+    activeProjectIndexRef,
   } = useAppRef();
   const { flareRef, pauseBreathing, playBreathing } = useFlare();
   const { isDesktop } = useResponsiveBreakpoints();
@@ -661,7 +663,7 @@ export default function LaptopMockup() {
       const intersects = raycaster.intersectObject(screenMesh, true);
 
       if (intersects.length > 0) {
-        openLinkInNewTab("/resume");
+        openLinkInNewTab(laptopLinks[activeProjectIndexRef.current]);
       }
     };
 

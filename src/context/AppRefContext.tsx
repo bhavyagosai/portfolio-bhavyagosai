@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useRef } from "react";
+import { createContext, useContext, useRef, useState } from "react";
 
 interface AppRefContextType {
   appBackgroundRef: React.RefObject<HTMLDivElement>;
@@ -13,6 +13,7 @@ interface AppRefContextType {
   projectsContainerRef: React.RefObject<HTMLDivElement>;
   minorProjectsContainerRef: React.RefObject<HTMLDivElement>;
   footerContainerRef: React.RefObject<HTMLDivElement>;
+  activeProjectIndexRef: React.RefObject<number>;
 }
 
 const AppRefContext = createContext<AppRefContextType | null>(null);
@@ -28,6 +29,7 @@ export const AppRefProvider = ({ children }: { children: React.ReactNode }) => {
   const projectsContainerRef = useRef<any>(null);
   const minorProjectsContainerRef = useRef<any>(null);
   const footerContainerRef = useRef<any>(null);
+  const activeProjectIndexRef = useRef<number>(0);
 
   return (
     <AppRefContext.Provider
@@ -42,6 +44,7 @@ export const AppRefProvider = ({ children }: { children: React.ReactNode }) => {
         projectsContainerRef,
         minorProjectsContainerRef,
         footerContainerRef,
+        activeProjectIndexRef,
       }}
     >
       {children}

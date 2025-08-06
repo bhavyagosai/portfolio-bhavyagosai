@@ -9,6 +9,13 @@ import XLogo from "@/logos/XLogo";
 
 export const menuItems = ["Home", "About", "Work", "Contact"];
 
+export const laptopLinks = [
+  "/resume",
+  "https://bytebeam.io/",
+  "https://lostferry.com/",
+  "https://app.onlydust.com/users/bhavyagosai/overview/",
+];
+
 export const projects = [
   {
     name: "BYTEBEAM",
