@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #ffffff;
+  --background: #171717;
+  color-scheme: dark !important;
 }
 
 @theme inline {
@@ -21,13 +22,6 @@
   --font-pprightgrotesk: var(--font-pprightgrotesk);
   --font-pprightgrotesk-compact: var(--font-pprightgrotesk-compact);
   --font-pprightgrotesk-wide: var(--font-pprightgrotesk-wide);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
