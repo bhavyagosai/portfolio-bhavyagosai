@@ -77,7 +77,7 @@ export default function Footer() {
       });
     });
 
-    const blurProxy = { blur: 50 };
+    const blurProxy = { blur: 25 };
 
     if (!isMobile) {
       gsap.to(blurProxy, {

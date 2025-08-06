@@ -159,7 +159,7 @@ export default function HeroSection() {
 
     if (!isMobile) {
       gsap.to(appBackgroundRef.current, {
-        backdropFilter: "blur(50px)",
+        backdropFilter: "blur(25px)",
         ease: "none",
         scrollTrigger: {
           trigger: heroContainerRef.current,
