@@ -148,19 +148,13 @@ export const minorProjects = [
   {
     name: "Flameback Capital",
     type: "Client",
-    year: "2023",
+    year: "2022",
     link: "https://flamebackcapital.com/",
-  },
-  {
-    name: "Pasteez",
-    type: "Personal",
-    year: "2021",
-    link: "https://pasteez.bhavyagosai.com/",
   },
   {
     name: "CHZ Cycling",
     type: "Client",
-    year: "2023",
+    year: "2022",
     link: "https://shop.chzcycling.cc/",
   },
   {
@@ -170,16 +164,22 @@ export const minorProjects = [
     link: "https://brightupelectrical.co.nz/",
   },
   {
-    name: "Skirade",
+    name: "Pasteez",
     type: "Personal",
-    year: "2022",
-    link: "https://github.com/bhavyagosai/skirade/",
+    year: "2021",
+    link: "https://pasteez.bhavyagosai.com/",
   },
   {
     name: "CinemaCrate",
     type: "Personal",
     year: "2020",
     link: "https://cinemacrate.bhavyagosai.com/",
+  },
+  {
+    name: "Skirade",
+    type: "Personal",
+    year: "2022",
+    link: "https://github.com/bhavyagosai/skirade/",
   },
   {
     name: "TwiceBuy",
