@@ -80,13 +80,19 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
+    images: [
+      {
+        url: `${siteConfig.ogImage}`,
+        alt: "Bhavya Gosai - Passionate Developer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
     images: [`${siteConfig.url}/og.png`],
-    creator: "@bhavyagosai",
+    creator: "@bhaxvya",
   },
   icons: {
     icon: "/favicon.ico",
@@ -120,7 +126,21 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <Head>
+        <link rel="canonical" href="https://bhavyagosai.com" />
+        <link rel="preload" as="image" href="/og.png" type="image/png" />
         <meta name="apple-mobile-web-app-title" content="Bhavya Gosai" />
+        <meta property="og:title" content={siteConfig.name} />
+        <meta property="og:description" content={siteConfig.description} />
+        <meta property="og:image" content={siteConfig.ogImage} />
+        <meta property="og:url" content={siteConfig.url} />
+        <meta property="og:site_name" content="Bhavya Gosai" />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:site" content="@bhaxvya" />
+        <meta name="twitter:creator" content="@bhaxvya" />
+        <meta
+          property="og:image:alt"
+          content="Bhavya Gosai - Passionate Developer"
+        />
         <meta name="color-scheme" content="dark" />
         <script
           type="application/ld+json"
