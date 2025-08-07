@@ -67,10 +67,10 @@ export default function CursorFlare({ children }: Props) {
 
   return (
     <main onMouseMove={handleMouseMove} className="no-scroll">
-      {!isMobile && !isTouchScreen && loaded && (
+      {!isMobile && !isTouchScreen && (
         <div
           ref={flareRef}
-          className="fixed flex items-center justify-center w-4 h-4 bg-white rounded-full pointer-events-none z-100 mix-blend-difference -top-3 -left-3 cursor-flair"
+          className="fixed flex items-center justify-center w-4 h-4 bg-white rounded-full opacity-0 pointer-events-none z-100 mix-blend-difference -top-3 -left-3 cursor-flair"
         >
           <p
             className="text-xl font-black mix-blend-difference whitespace-nowrap font-pprightgrotesk-wide"
