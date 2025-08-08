@@ -137,6 +137,7 @@ export default function RootLayout({
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:site" content="@bhaxvya" />
         <meta name="twitter:creator" content="@bhaxvya" />
+        <meta name="twitter:card" content="summary_large_image" />
         <meta
           property="og:image:alt"
           content="Bhavya Gosai - Passionate Developer"
