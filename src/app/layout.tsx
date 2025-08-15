@@ -178,7 +178,7 @@ export default function RootLayout({
           pp_right_grotesk.variable,
           pp_right_grotesk_compact.variable,
           pp_right_grotesk_wide.variable,
-          "realtive antialiased w-screen bg-background overflow-x-hidden overflow-y-auto no-scroll"
+          "relative antialiased w-screen bg-background overflow-x-hidden overflow-y-auto no-scroll"
         )}
       >
         <AppProviders>
