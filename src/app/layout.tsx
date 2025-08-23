@@ -127,28 +127,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Person",
-            name: "Bhavya Gosai",
-            url: "https://bhavyagosai.com",
-            sameAs: [
-              "https://twitter.com/bhaxvya",
-              "https://github.com/bhavyagosai",
-            ],
-            jobTitle: "Software Engineer",
-            description: "Creative developer and animation enthusiast",
-            address: {
-              "@type": "PostalAddress",
-              addressLocality: "Vadodara",
-              addressCountry: "India",
-            },
-          }),
-        }}
-      />
       <body
         tabIndex={-1}
         className={cn(
@@ -164,6 +142,28 @@ export default function RootLayout({
           "relative antialiased w-screen bg-background overflow-x-hidden overflow-y-auto no-scroll"
         )}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Bhavya Gosai",
+              url: "https://bhavyagosai.com",
+              sameAs: [
+                "https://twitter.com/bhaxvya",
+                "https://github.com/bhavyagosai",
+              ],
+              jobTitle: "Software Engineer",
+              description: "Creative developer and animation enthusiast",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Vadodara",
+                addressCountry: "India",
+              },
+            }).replace(/</g, "\\u003c"),
+          }}
+        />
         <AppProviders>
           <SiteWrapper>{children}</SiteWrapper>
         </AppProviders>
