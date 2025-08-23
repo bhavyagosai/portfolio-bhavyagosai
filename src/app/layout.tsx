@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
 import { siteConfig } from "@/config/site";
 import {
@@ -28,6 +27,9 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  alternates: {
+    canonical: "https://bhavyagosai.com",
+  },
   colorScheme: "dark",
   creator: "Bhavya Gosai",
   publisher: "Bhavya Gosai",
@@ -125,47 +127,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <Head>
-        <link rel="canonical" href="https://bhavyagosai.com" />
-        <link rel="preload" as="image" href="/og.png" type="image/png" />
-        <meta name="apple-mobile-web-app-title" content="Bhavya Gosai" />
-        <meta property="og:title" content={siteConfig.name} />
-        <meta property="og:description" content={siteConfig.description} />
-        <meta property="og:image" content={siteConfig.ogImage} />
-        <meta property="og:url" content={siteConfig.url} />
-        <meta property="og:site_name" content="Bhavya Gosai" />
-        <meta property="og:locale" content="en_US" />
-        <meta name="twitter:site" content="@bhaxvya" />
-        <meta name="twitter:creator" content="@bhaxvya" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          property="og:image:alt"
-          content="Bhavya Gosai - Passionate Developer"
-        />
-        <meta name="color-scheme" content="dark" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Bhavya Gosai",
-              url: "https://bhavyagosai.com",
-              sameAs: [
-                "https://twitter.com/bhaxvya",
-                "https://github.com/bhavyagosai",
-              ],
-              jobTitle: "Software Engineer",
-              description: "Creative developer and animation enthusiast",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Vadodara",
-                addressCountry: "India",
-              },
-            }),
-          }}
-        />
-      </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "Bhavya Gosai",
+            url: "https://bhavyagosai.com",
+            sameAs: [
+              "https://twitter.com/bhaxvya",
+              "https://github.com/bhavyagosai",
+            ],
+            jobTitle: "Software Engineer",
+            description: "Creative developer and animation enthusiast",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "Vadodara",
+              addressCountry: "India",
+            },
+          }),
+        }}
+      />
       <body
         tabIndex={-1}
         className={cn(
